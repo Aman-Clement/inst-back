@@ -56,6 +56,6 @@ app.post('/api/login',(req,res)=>{
 app.use(notFound)
 app.use(errorHandler)
 
-const PORT=process.env.PORT
+const PORT=process.env.PORT || 3000
 
 app.listen(PORT,console.log(`Server is up and running port:${PORT}`))
