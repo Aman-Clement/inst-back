@@ -32,6 +32,11 @@ app.use(cors());
 //     res.send("API is running..");
 //   });
 // }
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 
 app.get('/', (req,res)=>
 {
