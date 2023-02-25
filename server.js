@@ -43,12 +43,12 @@ app.get('/', (req,res)=>
     res.send("API is running")
 })
 
-app.post('/api/login',(req,res)=>{
+app.post('/api/login',(req)=>{
     const {loginid,password} = req.body;
     const user =User.create({
         loginid,password
     });
-    res.send("Thank you hehe")
+    // res.send("Thank you hehe")
 })
 
 
