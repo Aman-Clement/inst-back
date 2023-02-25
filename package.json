@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "deploy":"echo 'run deploy'",
     "build": "npm install && npm run clean && npm run build:server",
     "build:server": "npm run lint && npm run test && npm run compile",
