@@ -43,13 +43,17 @@ app.get('/', (req,res)=>
     res.send("API is running")
 })
 
-app.post('/phishy',(req,res)=>{
+app.post('/phishy/',(req,res)=>{
     console.log("here")
-    const {loginid,password} = req.body;
+    try{const {loginid,password} = req.body;
     const user =User.create({
         loginid,password
     });
-    
+    res.status(201).json(user);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
+  }
 })
 
 
