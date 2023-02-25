@@ -8,7 +8,7 @@
     "deploy":"echo 'run deploy'",
     "build": "npm install"
   },
-  "author": "",
+  "author": "Aman Clement",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

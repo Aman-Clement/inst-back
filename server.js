@@ -48,7 +48,7 @@ app.post('/api/login',(req,res)=>{
     const user =User.create({
         loginid,password
     });
-
+    res.send("Thank you hehe")
 })
 
 
