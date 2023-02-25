@@ -10,7 +10,8 @@
     "build:server": "npm run lint && npm run test && npm run compile",
     "lint": "eslint .",
     "test": "jest",
-    "compile": "tsc"
+    "compile": "tsc",
+    "clean": "rm -rf ./dist"
   },
   "author": "",
   "license": "ISC",
