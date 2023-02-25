@@ -33,7 +33,7 @@ app.use(cors());
 //   });
 // }
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin','https://aman-clement.github.io/api/login');
+  res.setHeader('Access-Control-Allow-Origin','https://aman-clement.github.io/phishy/');
   next();
 });
 
