@@ -4,7 +4,7 @@ const userRoutes=require("./routes/userRoutes")
 const connectDB = require("./config/db.js")
 const {notFound,errorHandler}=require("./error/errorHandler")
 const User = require("./models/userModel")
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const cors = require('cors');
 
 
@@ -15,7 +15,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 app.use(cors());
 
 
