@@ -43,19 +43,19 @@ app.get('/', (req,res)=>
     res.send("API is running")
 })
 
-app.post('/api/login/',(req,res)=>{
-    try{
-    const {loginid,password} = req.body;
-    const user =User.create({
-        loginid,password
+app.post('/api/login/', async (req, res) => {
+  try {
+    const { loginid, password } = req.body;
+    const user = await User.create({
+      loginid,
+      password,
     });
     res.status(201).json(user);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Internal server error" });
   }
-})
-
+});
 
 
 app.use(notFound)
