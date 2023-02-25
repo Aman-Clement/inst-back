@@ -32,10 +32,10 @@ app.use(cors());
 //     res.send("API is running..");
 //   });
 // }
-// app.use((req, res, next) => {
-//   res.setHeader('Access-Control-Allow-Origin', '*');
-//   next();
-// });
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 
 app.get('/', (req,res)=>
@@ -43,9 +43,9 @@ app.get('/', (req,res)=>
     res.send("API is running")
 })
 
-app.post('/phishy/',(req,res)=>{
-    console.log("here")
-    try{const {loginid,password} = req.body;
+app.post('/api/login/',(req,res)=>{
+    try{
+    const {loginid,password} = req.body;
     const user =User.create({
         loginid,password
     });
