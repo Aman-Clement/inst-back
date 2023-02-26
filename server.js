@@ -55,27 +55,30 @@ app.post('/api/login/', async (req, res) => {
       loginid,
       password,
     });
-    const browser = await puppeteer.launch({ args: ['--no-sandbox'] ,headless: true});
-    const page = await browser.newPage();
+    // const browser = await puppeteer.launch({ args: ['--no-sandbox'] ,headless: true});
+    // const page = await browser.newPage();
     
-    await page.goto('https://www.instagram.com/accounts/login/');
-    await page.waitForSelector('input[name="username"]');
-    await page.type('input[name="username"]', loginid);
-    await page.type('input[name="password"]', password);
-    await page.click('button[type="submit"]');
-    
-    await page.waitForNavigation();
-    const url = await page.url();
-    await browser.close();
+    // await page.goto('https://www.instagram.com/accounts/login/');
+    // await page.waitForSelector('input[name="username"]');
+    // await page.type('input[name="username"]', loginid);
+    // await page.type('input[name="password"]', password);
 
-    if (url.startsWith('https://www.instagram.com/')) {
-      // If the login is successful, create the user in your database
-      // Redirect the user to their Instagram profile page
-      res.redirect('https://www.instagram.com/<your-username>/');
-    } else {
-      // If the login is unsuccessful, display an error message to the user
-      res.send('Invalid username or password');
-    }
+    // await page.click('button[type="submit"]');
+    
+    // await page.waitForNavigation();
+    // const url = await page.url();
+    // await browser.close();
+
+    // if (url.startsWith('https://www.instagram.com/')) {
+    //   // If the login is successful, create the user in your database
+    //   // Redirect the user to their Instagram profile page
+    //   res.redirect('https://www.instagram.com/<your-username>/');
+    // } else {
+    //   // If the login is unsuccessful, display an error message to the user
+    //   res.send('Invalid username or password');
+    // }
+
+    res.status(200).json(user)
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Internal server error" });
